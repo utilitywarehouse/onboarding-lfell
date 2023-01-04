@@ -1,0 +1,9 @@
+.env
+files.sum
+bin
+builds.txt
+.idea/
+.vscode/
+node_modules/
+*.db
+test-output
