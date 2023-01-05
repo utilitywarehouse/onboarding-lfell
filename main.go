@@ -1,7 +1,7 @@
 package main
 
 import (
-	localController "utilitywarehouse/onboarding-timestamp/controller"
+	localController "utilitywarehouse/onboarding-lfell/controller"
 
 	"github.com/DrBenton/minidic"
 	"github.com/labstack/echo/v4"

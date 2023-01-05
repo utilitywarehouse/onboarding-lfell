@@ -3,9 +3,9 @@ RUN apk add build-base
 
 WORKDIR /app
 ADD . /app
-RUN go build -o /onboarding-timestamp
+RUN go build -o /onboarding-lfell
 
 FROM alpine:latest
-COPY --from=0 /onboarding-timestamp /
+COPY --from=0 /onboarding-lfell /
 EXPOSE 8080
-CMD ["/onboarding-timestamp"]
+CMD ["/onboarding-lfell"]
