@@ -18,7 +18,7 @@ func main() {
 
 	createEndpoints(container, e)
 
-	e.Logger.Fatal(e.Start(":3000"))
+	e.Logger.Fatal(e.Start(":8080"))
 }
 
 func buildContainer() minidic.Container {
