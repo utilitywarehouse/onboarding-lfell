@@ -45,10 +45,10 @@ install:
 clean:
 	rm -f $(SERVICE)
 
-$(SERVICE): clean
-	GO111MODULE=on $(BUILDENV) go build -o $(SERVICE) -a -ldflags '$(LINKFLAGS)' ./cmd/$(SERVICE)/*.go
+#$(SERVICE): clean
+	#GO111MODULE=on $(BUILDENV) go build -o $(SERVICE) -a -ldflags '$(LINKFLAGS)' ./cmd/$(SERVICE)/*.go
 
-build: $(SERVICE)
+#build: $(SERVICE)
 
 .PHONY: test
 test:
