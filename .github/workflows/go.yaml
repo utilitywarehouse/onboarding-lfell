@@ -46,5 +46,5 @@ jobs:
             SERVICE=${{ env.IMAGE_NAME }}
             GITHUB_TOKEN=${{ secrets.DEPLOY_GITHUB_TOKEN }}
             GITHUB_USER=${{ secrets.DEPLOY_GITHUB_USER }}
-          tags: ${{ env.REGISTRY }}/onboarding/${{ env.IMAGE_NAME }}:${{ github.sha }},${{ env.REGISTRY }}/onboarding/${{ env.IMAGE_NAME }}
+          tags: ${{ env.REGISTRY }}/onboarding/${{ env.IMAGE_NAME }}:${{ github.sha }}
           push: true
