@@ -46,7 +46,7 @@ clean:
 	rm -f $(SERVICE)
 
 $(SERVICE): clean
-	GO111MODULE=on $(BUILDENV) go build -o $(SERVICE) -a -ldflags '$(LINKFLAGS)' ./cmd/$(SERVICE)/*.go
+	GO111MODULE=on $(BUILDENV) go build -o $(SERVICE) -a -ldflags '$(LINKFLAGS)' .
 
 build: $(SERVICE)
 
