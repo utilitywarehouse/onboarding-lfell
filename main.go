@@ -1,6 +1,7 @@
 package main
 
 import (
+	"github.com/labstack/echo-contrib/prometheus"
 	localController "utilitywarehouse/onboarding-lfell/controller"
 
 	"github.com/DrBenton/minidic"
@@ -13,6 +14,9 @@ func main() {
 	e.Pre(middleware.RemoveTrailingSlash())
 	e.Use(middleware.Logger())
 	e.Use(middleware.Recover())
+
+	p := prometheus.NewPrometheus("echo", nil)
+	p.Use(e)
 
 	container := buildContainer()
 
@@ -33,6 +37,8 @@ func buildContainer() minidic.Container {
 }
 
 func createEndpoints(container minidic.Container, echo *echo.Echo) {
+
 	timeGroup := echo.Group("/time")
+
 	timeGroup.GET("/now", container.Get("Controller.Timestamp").(*localController.TimestampController).GetTimestamp)
 }
